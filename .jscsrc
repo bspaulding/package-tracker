@@ -1,0 +1,10 @@
+{
+  "preset": "node-style-guide",
+  "requireTrailingComma": null,
+  "requireCapitalizedComments": null,
+  "requireCamelCaseOrUpperCaseIdentifiers": null,
+
+  "disallowTrailingComma": true,
+  "validateQuoteMarks": null,
+  "maximumLineLength": null
+}
