@@ -15,7 +15,7 @@ var ups = UPS({
 
 app.use(require("compression")());
 app.use(function(request, response, next) {
-  var match = request.originalUrl.match(/\/(.*)+/);
+  var match = request.originalUrl.match(/\/(.+)/);
   if (!match) {
     response.end(JSON.stringify({ error: "No tracking number provided" }));
   }
