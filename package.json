@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --progress --colors -p src/main.jsx dist/bundle.js --module-bind 'js=jsx' --module-bind 'jsx=jsx'",
+    "watch": "webpack --progress --colors --watch src/main.jsx dist/bundle.js --module-bind 'js=jsx' --module-bind 'jsx=jsx'",
+    "dev-server": "webpack-dev-server --no-info --progress --colors --module-bind 'jsx=jsx' --content-base dist --hot --inline src/main.jsx"
   },
   "author": "",
   "license": "MIT",
@@ -13,6 +15,16 @@
     "compression": "^1.4.4",
     "connect": "^3.3.5",
     "dotenv": "^1.1.0",
+    "marmottajax": "^2.0.1",
+    "send": "^0.12.3",
+    "serve-static": "^1.9.3",
     "shipping-ups": "^0.4.27"
+  },
+  "devDependencies": {
+    "jsx-loader": "^0.13.2",
+    "node-libs-browser": "^0.5.0",
+    "react": "^0.13.3",
+    "webpack": "^1.9.7",
+    "webpack-dev-server": "^1.8.2"
   }
 }
