@@ -3,7 +3,6 @@
   "requireTrailingComma": null,
   "requireCapitalizedComments": null,
   "requireCamelCaseOrUpperCaseIdentifiers": null,
-
   "disallowTrailingComma": true,
   "validateQuoteMarks": null,
   "maximumLineLength": null
