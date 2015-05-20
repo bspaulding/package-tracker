@@ -16,6 +16,7 @@
     "connect": "^3.3.5",
     "dotenv": "^1.1.0",
     "marmottajax": "^2.0.1",
+    "moment": "^2.10.3",
     "send": "^0.12.3",
     "serve-static": "^1.9.3",
     "shipping-ups": "^0.4.27"
