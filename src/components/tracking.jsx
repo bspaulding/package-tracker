@@ -30,8 +30,9 @@ var Tracking = React.createClass({
     return (
       <div>
         <h1>Tracking <small>{this.state.trackingNumber}</small></h1>
-        {this.state.loading ? 'Loading...' : ''}
-        {dataAvailable ? <PackageInfo carrier={carrier} shipment={shipment}/> : 'No tracking data available, yet.'}
+        {this.state.loading ? 'Loading...' : (
+          dataAvailable ? <PackageInfo carrier={carrier} shipment={shipment}/> : 'No tracking data available, yet.'
+        )}
       </div>
     );
   }
