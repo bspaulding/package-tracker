@@ -12,16 +12,16 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^2.9.27",
     "compression": "^1.4.4",
     "connect": "^3.3.5",
     "dotenv": "^1.1.0",
     "marmottajax": "^2.0.1",
     "moment": "^2.10.3",
-    "promise": "^7.0.1",
     "send": "^0.12.3",
     "serve-static": "^1.9.3",
     "shipping-ups": "^0.4.27",
-    "usps": "^1.0.1"
+    "shipping-usps": "0.0.4"
   },
   "devDependencies": {
     "jsx-loader": "^0.13.2",
