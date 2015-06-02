@@ -20,7 +20,8 @@
     "promise": "^7.0.1",
     "send": "^0.12.3",
     "serve-static": "^1.9.3",
-    "shipping-ups": "^0.4.27"
+    "shipping-ups": "^0.4.27",
+    "usps": "^1.0.1"
   },
   "devDependencies": {
     "jsx-loader": "^0.13.2",
