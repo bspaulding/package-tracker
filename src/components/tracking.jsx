@@ -26,7 +26,6 @@ var Tracking = React.createClass({
       carrier  = this.state.trackingData.result.carrier;
       shipment = this.state.trackingData.result.data;
     }
-    console.log("[Tracking] shipment: ", shipment);
 
     return (
       <div>
