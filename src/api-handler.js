@@ -1,4 +1,4 @@
-var TrackingStore = require('./src/tracking-store.js');
+var TrackingStore = require('./tracking-store.js');
 
 module.exports = function(request, response/* , next */) {
   var match = request.originalUrl.match(/\/api\/([A-Za-z0-9]+)/);
