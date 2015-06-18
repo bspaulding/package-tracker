@@ -1,12 +1,14 @@
 var React = require("react");
 var UPSPackageInfo = require("./ups-package-info.jsx");
 var USPSPackageInfo = require("./usps-package-info.jsx");
+var FEDEXPackageInfo = require("./fedex-package-info.jsx");
 
 var PackageInfo = React.createClass({
   render: function() {
     var CarrierPackageInfo = {
       UPS: UPSPackageInfo,
-      USPS: USPSPackageInfo
+      USPS: USPSPackageInfo,
+      FEDEX: FEDEXPackageInfo
     }[this.props.carrier];
     console.log("[PackageInfo] this.props.shipment: ", this.props.shipment);
 
