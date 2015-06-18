@@ -52,11 +52,44 @@ var usps = (function() {
   };
 }());
 
+var fedex = (function() {
+  var FEDEX = require('shipping-fedex');
+  var fedex = new FEDEX({
+    environment: process.env.FEDEX_ENVIRONMENT,
+    key: process.env.FEDEX_API_KEY,
+    password: process.env.FEDEX_PASSWORD,
+    account_number: process.env.FEDEX_ACCOUNT_NUMBER,
+    meter_number: process.env.FEDEX_METER_NUMBER
+  });
+
+  return {
+    track: function(trackingNumber) {
+      return new _Promise(function(resolve, reject) {
+        fedex.track({
+          SelectionDetails: {
+            PackageIdentifier: {
+              Type: 'TRACKING_NUMBER_OR_DOORTAG',
+              Value: trackingNumber
+            }
+          }
+        }, function(error, response) {
+          if (error) {
+            reject(error);
+          } else {
+            resolve({ carrier: 'FEDEX', data: response });
+          }
+        });
+      });
+    }
+  };
+}());
+
 module.exports = {
   get: function(trackingNumber) {
     return _Promise.any([
       ups.track(trackingNumber),
-      usps.track(trackingNumber)
+      usps.track(trackingNumber),
+      fedex.track(trackingNumber)
     ]);
   }
 };
