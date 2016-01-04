@@ -76,7 +76,13 @@ var fedex = (function() {
           if (error) {
             reject(error);
           } else {
-            resolve({ carrier: 'FEDEX', data: response });
+            var trackingDetails = response.CompletedTrackDetails;
+            var hasTrackingInfo = trackingDetails ? false : parseInt(trackingDetails.TrackDetailsCount, 10) > 0;
+            if (hasTrackingInfo) {
+              resolve({ carrier: 'FEDEX', data: response });
+            } else {
+              reject("No tracking details found");
+            }
           }
         });
       });
